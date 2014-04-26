@@ -20,8 +20,10 @@ function Map(div) {
             streetViewControl: false,
             draggable: false
         };
+    }
 
-        $(div).css({
+    map.prototype.initialize = function () {
+        $(this.element).css({
             position: "absolute",
             marginLeft: 0,
             marginTop: 0,
@@ -31,14 +33,13 @@ function Map(div) {
             height: contentHeight + 'px'
         });
 
-        $(div).css('z-index', 9994);
+        $(this.element).css('z-index', 9994);
 
-        if (user.position !== null)
-            this.options.center = new google.maps.LatLng(user.position.coords.latitude, user.position.coords.longitude);
+        if (user.position !== null) this.options.center = new google.maps.LatLng(user.position.coords.latitude, user.position.coords.longitude);
 
-        this.mapObject = new google.maps.Map($(div)[0], this.options);
+        this.mapObject = new google.maps.Map($(this.element)[0], this.options);
         this.updateUserLocation();
-    }
+    };
 
     map.prototype.show = function () {
         if (!this.visible) {
@@ -74,10 +75,12 @@ function Map(div) {
     };
 
     return new map(div);
-};
+}
 
-$(function(){
-    var map = new Map('#map-container');
+var map = new Map('#map-container');
+
+document.addEventListener("deviceready", function () {
+    map.initialize();
     $(document).on("pagebeforeshow", ".ui-page", map.hide());
     $(document).on("pageshow", ".page-map", map.show());
 });
