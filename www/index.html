@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+
+        <script type="text/javascript" src="js/vendor/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="js/logger.js"></script>
+
+        <script type="text/javascript" src="js/vendor/websocket-rails.js"></script>
+        <script type="text/javascript" src="js/sockets.js"></script>
+
+        <!-- styles -->
+        <link rel="stylesheet" type="text/css" href="js/vendor/jquery.mobile/jquery.mobile-1.4.2.min.css">
+
+        <link rel="stylesheet" href="css/native-droid/font-awesome.min.css">
+        <link rel="stylesheet" href="css/native-droid/jquerymobile.css" />
+        <link rel="stylesheet" href="css/native-droid/jquerymobile.nativedroid.css" />
+        <link rel="stylesheet" href="css/native-droid/jquerymobile.nativedroid.light.css" id='jQMnDTheme'/>
+        <link rel="stylesheet" href="css/native-droid/jquerymobile.nativedroid.color.green.css" id='jQMnDColor' />
+        <link rel="stylesheet" href="css/index.css" />
+
+         <!-- ext. libraries -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYhZWh2Nguo8KwGcexS31RQqrHU182rp8&amp;sensor=false"></script>
+
+        <script type="text/javascript">
+        $(document).bind("mobileinit", function(){
+          $.mobile.defaultPageTransition = 'none';
+          $.mobile.allowCrossDomainPages = true;
+        });
+        </script>
+        <script type="text/javascript" src="js/vendor/jquery.mobile/jquery.mobile-1.4.2.min.js"></script>
+        <script type="text/javascript" src="js/misc.js"></script>
+
+
+        <script type="text/javascript" src="phonegap.js"></script>
+
+        <!-- model js -->
+        <script type="text/javascript" src="js/user.js"></script>
+        <script type="text/javascript" src="js/map.js"></script>
+
+        <!-- page/action js -->
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="https://secrspo.herokuapp.com/assets/websocket_rails/main.js"></script>
+
+        <title>Secret Spots</title>
+    </head>
+    <body>
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <a href="#menu"><i class='icon-ellipsis-vertical'></i></a>
+            <h1 role="heading">Secret Spots</h1>
+        </div><!-- /header -->
+
+        <div id="map"></div>
+
+        <div data-role="page" data-theme="b">
+            <div id="main" role="main" class="ui-content">
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false" data-theme="b" class="ui-footer">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li><a href="pages/map.html" data-icon="navigation" class=" ui-btn-active">Map</a></li>
+                    <li><a href="pages/list.html" data-icon="bullets">List</a></li>
+                    <li><a href="pages/new.html" data-icon="action">Mark</a></li>
+                    <li><a href="pages/settings.html" data-icon="gear">Settings</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /footer -->
+
+        <div data-role="panel" id="menu" data-position="left" data-theme="b">
+            <ul data-role="listview" data-divider-theme="b">
+                <li><a href="#" data-rel="close" class="ui-btn ui-btn-icon-right ui-icon-delete">Close</a></li>
+                <li data-role="list-divider"><span class="ui-btn-icon-notext ui-icon-location"></span> </li>
+                <!--<li><a href="#">Active</a></li>-->
+                <!--<li><a href="#">Trending</a></li>-->
+                <li><a href="#">Tag Cloud</a></li>
+                <li data-role="list-divider"><span class="ui-btn-icon-notext ui-icon-user"></span></li>
+                <!--<li><a href="#">Favorites</a></li>-->
+                <!--<li><a href="#">Activity</a></li>-->
+                <li><a href="#">Tags</a></li>
+                <li><a href="#">Settings</a></li>
+                <li data-role="list-divider"><span class="ui-btn-icon-notext ui-icon-info"></span></li>
+                <li><a href="pages/about.html">About</a></li>
+                <li><a href="pages/about.html">Donate</a></li>
+                <li><a href="pages/info.html">Info</a></li>
+                <li><a href="#" onClick="openLog()">Logs</a></li>
+            </ul>
+        </div><!-- /panel -->
+
+        <div id="logs" class="ui-page ui-page-theme-b ui-page-active">
+            <div class="header">
+            <a href="#" onClick="closeLog()" class="ui-btn ui-icon-delete">Close</a>
+            </div>
+            <div class="console">
+                <ul class="output ui-listview" data-role="listview" data-divider-theme="b"></ul>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+        loading('show');
+        var message = {awesomeness:4};
+        dispatcher.trigger('awesomeness_approval',message,success,failure);
+         app.initialize();
+         loading('hide');
+         logger.log("test");
+        </script>
+    </body>
+</html>

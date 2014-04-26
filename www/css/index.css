@@ -1,0 +1,109 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+@import url(https://fonts.googleapis.com/css?family=Marck+Script|Open+Sans:600,400&subset=latin,latin-ext);
+
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+html, body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;
+    font-family: 'Open Sans', sans-serif;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+
+.ui-header h1.ui-title {
+  font-family: 'Marck Script', cursive;
+  font-size: 1.7em;
+  padding: 3px 0 3px 0;
+}
+
+p {
+    font: 1.2em;
+}
+
+#main {
+}
+
+#map {
+    height: 100%;
+}
+
+#back-button {
+    visibility: hidden;
+}
+
+.map-content {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#logs {
+    height: 100%;
+    width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: scroll;
+}
+
+#logs .head {
+    height: 20%;
+}
+
+#logs span.msg {
+    height: 80%;
+    font-size: 0.6em;
+}
+
+#logs li.log {
+    background: #D9EDF7;
+}
+
+#logs li.warn {
+    background: #FCF8E3;
+}
+
+#logs li.error {
+    background: #F2DEDE;
+}
+
+#logs li.debug {
+    background: #428BCA;
+}

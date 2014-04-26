@@ -1,0 +1,28 @@
+<div data-role="page">
+      <div id="main" role="main" class="ui-content">
+          <h1>
+            <span class="name">Spots</span>
+            <small>
+              <span class="lat"></span>,
+              <span class="lng"></span>
+            </small>
+          </h1>
+          <p class="description"></p>
+      </div><!-- /content -->
+      <script type="text/javascript">
+        $(function () {
+            alert(sessionStorage.spot_id);
+            var spot = {id: sessionStorage.spot_id};
+
+            var success = function (response) {
+              var spot = $.parseJSON(response.message);
+              $('.name').text(spot.name);
+              $('.lat').text(spot.lat);
+              $('.lng').text(spot.lng);
+              $('.description').text(spot.description);
+            };
+
+            dispatcher.trigger('spot', spot, success, failure);
+        });
+      </script>
+</div><!-- /page -->

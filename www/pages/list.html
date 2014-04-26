@@ -1,0 +1,28 @@
+<div data-role="page">
+      <div id="main" role="main" class="ui-content">
+          <h1>Nearby Spots</h1>
+          <ul id="spot-list" data-role="listview" data-inset="true">
+          </ul>
+      </div><!-- /content -->
+      <script type="text/javascript">
+        $(function () {
+            var success = function (response) {
+                var list = $.parseJSON(response.message);
+                $.each(list, function (i, spot) {
+                    $('#spot-list').append($('<li/>').html('<a href="spot.html" onclick="sessionStorage.spot_id=' +
+                      spot["id"] +
+                      '"><img src="../img/logo.png"><h2>' +
+                      spot.name +
+                      '</h2><p>' +
+                      spot.description +
+                      '<br> Distance:' +
+                      spot.distance +
+                      ' mi</p></a></li>'));
+                });
+                $('#spot-list').listview('refresh');
+            };
+            var message = {lat: user.lat, lng: user.lng};
+            dispatcher.trigger('spots_list', message, success, failure);
+        });
+      </script>
+</div><!-- /page -->

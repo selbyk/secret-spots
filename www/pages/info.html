@@ -1,0 +1,36 @@
+<div data-role="page">
+      <div id="main" role="main" class="ui-content">
+          <h1>Information</h1>
+          <table data-role="table" id="info-table">
+           <thead>
+             <tr>
+               <th>Property</th>
+               <th>Value</th>
+             </tr>
+           </thead>
+           <tbody>
+           </tbody>
+         </table>
+      </div><!-- /content -->
+      <script type="text/javascript">
+
+        var appendToTable = function(label, value){
+              $('#info-table > tbody').append("<tr><td>"+label+"</td><td>"+value+"</td></tr>");
+        };
+        if(device!="undefined"){
+              appendToTable("Device Name:", device.name);
+              appendToTable('Device PhoneGap: ' , device.phonegap);
+              appendToTable('Device Platform: ' , device.platform);
+              appendToTable('Device UUID: '     , device.uuid);
+              appendToTable('Device Version: '  , device.version);
+        }
+        appendToTable('Latitude: '          , user.position.coords.latitude);
+        appendToTable('Longitude: '         , user.position.coords.longitude);
+        appendToTable('Altitude: '          , user.position.coords.altitude );
+        appendToTable('Accuracy: '          , user.position.coords.accuracy );
+        appendToTable('Altitude Accuracy: ' , user.position.coords.altitudeAccuracy);
+        appendToTable('Heading: '           , user.position.coords.heading );
+        appendToTable('Speed: '             , user.position.coords.speed);
+        appendToTable('Timestamp: '         , user.position.timestamp);
+      </script>
+</div><!-- /page -->
