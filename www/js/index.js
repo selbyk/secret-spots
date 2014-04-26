@@ -9,6 +9,8 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        $(document).on("pagebeforeshow", ".ui-page", map.hide());
+        $(document).on("pageshow", ".page-map", map.show());
     },
     // deviceready Event Handler
     //
