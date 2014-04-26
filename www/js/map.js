@@ -82,8 +82,16 @@ function Map(div) {
 
 var map = new Map('#map-container');
 
+function closeLog() {
+    map.hide();
+}
+
+function openLog() {
+    map.show();
+}
+
 $(function(){
     map.initialize();
     $(document).on("pagebeforeshow", ".ui-page", map.hide());
-    $(document).on("pageshow", ".page-map", map.show());
+    $(document).on("pageshow", ".page-map", map.show;
 });

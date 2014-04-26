@@ -1,5 +1,3 @@
-var dispatcher = new WebSocketRails('wss://secrspo.herokuapp.com/websocket');
-
 dispatcher.on_open = function (data) {
     logger.info('Websocket connection opened');
 };
@@ -24,6 +22,7 @@ var failure = function (response) {
 
 
 document.addEventListener("deviceready", function(){
+    var dispatcher = new WebSocketRails('wss://secrspo.herokuapp.com/websocket');
     var connecting = false;
     setInterval(function () {
         if (dispatcher.state == 'undefined') dispatcher = new WebSocketRails('wss://secrspo.herokuapp.com/websocket');
