@@ -93,5 +93,5 @@ function openLog() {
 $(function(){
     map.initialize();
     $(document).on("pagebeforeshow", ".ui-page", map.hide());
-    $(document).on("pageshow", ".page-map", map.show;
+    $(document).on("pageshow", ".page-map", map.show);
 });
