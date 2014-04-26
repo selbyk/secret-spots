@@ -37,22 +37,6 @@ p {
     font: 1.2em;
 }
 
-#main {
-}
-
-#map {
-    height: 100%;
-}
-
-#back-button {
-    visibility: hidden;
-}
-
-.map-content {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
 #logs {
     height: 100%;
     width: 100%;
