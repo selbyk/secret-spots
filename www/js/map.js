@@ -79,7 +79,7 @@ function Map(div) {
 
 var map = new Map('#map-container');
 
-document.addEventListener("deviceready", function () {
+$(function () {
     map.initialize();
     $(document).on("pagebeforeshow", ".ui-page", map.hide());
     $(document).on("pageshow", ".page-map", map.show());

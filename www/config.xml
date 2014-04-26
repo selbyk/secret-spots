@@ -80,11 +80,10 @@
     <!--
         Access to external domains.
     -->
-    <access origin="*"/>
     <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
     <access origin="https://secrspo.herokuapp.com*"/>
     <access origin="wss://secrspo.herokuapp.com*"/>
-    <access origin="https://*.google.com*"/>
-    <access origin="https://*.googleapis.com*"/>
-    <access origin="https://*.gstatic.com*"/>
+    <access origin="http*.google.com*"/>
+    <access origin="http*.googleapis.com*"/>
+    <access origin="http*.gstatic.com*"/>
 </widget>
