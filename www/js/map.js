@@ -35,7 +35,8 @@ function Map(div) {
 
         $(this.element).css('z-index', 9994);
 
-        if (user.position !== null) this.options.center = new google.maps.LatLng(user.position.coords.latitude, user.position.coords.longitude);
+        if (user.position !== null)
+            this.options.center = new google.maps.LatLng(user.position.coords.latitude, user.position.coords.longitude);
 
         this.mapObject = new google.maps.Map($(this.element)[0], this.options);
         this.updateUserLocation();
@@ -75,12 +76,10 @@ function Map(div) {
     };
 
     return new map(div);
-}
+};
 
 var map = new Map('#map-container');
 
-$(function () {
+document.addEventListener("deviceready", function(){
     map.initialize();
-    $(document).on("pagebeforeshow", ".ui-page", map.hide());
-    $(document).on("pageshow", ".page-map", map.show());
 });

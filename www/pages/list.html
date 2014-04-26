@@ -1,7 +1,7 @@
 <div data-role="page">
       <div id="main" role="main" class="ui-content">
           <h1>Nearby Spots</h1>
-          <ul id="spot-list" data-role="listview" data-inset="true">
+          <ul id="spot-list" data-role="listview">
           </ul>
       </div><!-- /content -->
       <script type="text/javascript">
@@ -20,6 +20,7 @@
                       ' mi</p></a></li>'));
                 });
                 $('#spot-list').listview('refresh');
+                logger.info('list updated');
             };
             var message = {lat: user.lat, lng: user.lng};
             dispatcher.trigger('spots_list', message, success, failure);
