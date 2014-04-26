@@ -66,7 +66,7 @@ var logger = function () {
 logger.handleConsole();
 
 function closeLog() {
-    $('#logs').css('z-index', -2);
+    $('#logs').css('z-index', -1);
 }
 
 function openLog() {
