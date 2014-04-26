@@ -60,16 +60,15 @@ var logger = function () {
         intercept(methods[i]);
     };
 
+    Logger.prototype.showLogs = function () {
+        $('#logs').css('z-index', -1);
+    };
+    Logger.prototype.hideLogs = function (msg) {
+        $('#logs').css('z-index', 9998);
+        $("#menu").panel("close");
+    };
+
     return new Logger();
 }();
 
 logger.handleConsole();
-
-function closeLog() {
-    $('#logs').css('z-index', -1);
-}
-
-function openLog() {
-    $('#logs').css('z-index', 9998);
-    $("#menu").panel("close");
-}

@@ -82,16 +82,22 @@ function Map(div) {
 
 var map = new Map('#map-container');
 
-function closeLog() {
-    map.hide();
-}
-
-function openLog() {
-    map.show();
-}
-
-$(function(){
+function initializeMap() {
     map.initialize();
-    $(document).on("pagebeforeshow", ".ui-page", map.hide());
-    $(document).on("pageshow", ".page-map", map.show);
-});
+
+    $(document).on("pagebeforeshow", ".ui-page", map.hide);
+    $(document).on("pageshow", ".page-map", map.show;
+
+    navigator.geolocation.watchPosition(function (position) {
+        user.position = position;
+        user.lat = position.coords.latitude;
+        user.lng = position.coords.longitude;
+        map.updateUserLocation();
+        logger.log("location updated");
+    }, function (error) {
+        logger.log('code: ' + error.code + '\n' +
+            'message: ' + error.message + '\n');
+    }, {
+        timeout: 30000
+    });
+}

@@ -9,30 +9,21 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        $(document).on("pagebeforeshow", ".ui-page", map.hide());
-        $(document).on("pageshow", ".page-map", map.show());
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function () {
-        navigator.geolocation.watchPosition(function (position) {
-            user.position = position;
-            user.lat = position.coords.latitude;
-            user.lng = position.coords.longitude;
-            map.updateUserLocation();
-            logger.log("location updated");
-        }, function (error) {
-            logger.log('code: ' + error.code + '\n' +
-                'message: ' + error.message + '\n');
-        }, {
-            timeout: 30000
-        });
+        app.receivedEvent('deviceready');
+
+        initializeDispatcher();
+
+        initializeMap();
 
         $.mobile.changePage('pages/map.html');
 
-        app.receivedEvent('deviceready');
+
     },
     // Update DOM on a Received Event
     receivedEvent: function (id) {
