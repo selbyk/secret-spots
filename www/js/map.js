@@ -20,7 +20,7 @@ var map = {
     init: function () {
         if (user.position !== null)
             this.options.center = new google.maps.LatLng(user.position.coords.latitude, user.position.coords.longitude);
-        this._object = new google.maps.Map(document.getElementById("map"), this.options);
+        this._object = new google.maps.Map($("#map-container"), this.options);
         this.updateUserLocation();
     },
     updateUserLocation: function () {

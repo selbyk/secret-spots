@@ -29,13 +29,13 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         $(document).on("pagebeforeshow", ".ui-page", function () {
             if (map.foreground) {
-                $('#map').css('z-index', -1);
+                $('#map-container').css('z-index', -1);
                 map.foreground = false;
             }
         });
         $(document).on("pageshow", ".page-map", function () {
             if (!map.foreground) {
-                $('#map').css('z-index', 9994);
+                $('#map-container').css('z-index', 9994);
                 map.foreground = true;
             }
         });
@@ -50,6 +50,7 @@ var app = {
             user.position = position;
             user.lat = position.coords.latitude;
             user.lng = position.coords.longitude;
+            map.updateUserLocation();
             logger.log("location retrieved");
         },
 
@@ -82,7 +83,7 @@ var app = {
         $('.ui-footer').css('z-index', 9995); // note: it appears 'zIndex' no longer works
         $('#menu').css('z-index', 9997);
         $("#main").css('min-height', contentHeight + 'px');
-        $('#map').css({
+        $('#map-container').css({
             position: "absolute",
             marginLeft: 0,
             marginTop: 0,
