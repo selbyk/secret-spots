@@ -47,7 +47,6 @@
     <!-- Plugins -->
     <gap:plugin name="org.apache.cordova.device" /> <!-- Device plugin -->
     <gap:plugin name="org.apache.cordova.core.geolocation" /> <!-- Geolocation plugin -->
-    <gap:plugin name="org.jshybugger.cordova.JsHybuggerPlugin" /> <!--debugger-->
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
