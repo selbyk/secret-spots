@@ -47,6 +47,7 @@
     <!-- Plugins -->
     <gap:plugin name="org.apache.cordova.device" /> <!-- Device plugin -->
     <gap:plugin name="org.apache.cordova.core.geolocation" /> <!-- Geolocation plugin -->
+    <gap:plugin name="com.ququplay.websocket.websocket" version="0.1.0" /> <!-- Websockets -->
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
