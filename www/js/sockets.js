@@ -23,6 +23,7 @@ var failure = function (response) {
 };
 
 $(function () {
+    var connecting = false;
     setInterval(function () {
         if (dispatcher.state == 'undefined') dispatcher = new WebSocketRails('wss://secrspo.herokuapp.com/websocket');
         else {
@@ -31,8 +32,15 @@ $(function () {
                 logger.error('Websocket status: ' + status);
                 logger.warn('Websocket reconnecting...');
                 dispatcher.reconnect();
-            } else {
+            } if (status == 'connecting') {
                 logger.info('Websocket status: ' + status);
+                if(connecting == true) {
+                    logger.warn('Websocket connection stale, reconnecting...');
+                    dispatcher.reconnect();
+                    connecting = false;
+                } else connecting = true;
+            } else {
+                logger.log('Websocket status: ' + status);
             }
         }
     }, 10000);
