@@ -43,6 +43,7 @@ function Map(div) {
     };
 
     map.prototype.show = function () {
+        logger.info('show map');
         if (!this.visible) {
             $(this.element).css('z-index', 9994);
             this.visible = true;
@@ -50,6 +51,7 @@ function Map(div) {
     };
 
     map.prototype.hide = function () {
+        logger.info('hide map');
         if (this.visible) {
             $(this.element).css('z-index', -1);
             this.visible = false;
@@ -82,4 +84,6 @@ var map = new Map('#map-container');
 
 $(function(){
     map.initialize();
+    $(document).on("pagebeforeshow", ".ui-page", map.hide());
+    $(document).on("pageshow", ".page-map", map.show());
 });

@@ -22,7 +22,8 @@ var failure = function (response) {
     else logger.error("Server replied with error! \n" + response.message);
 };
 
-$(function () {
+
+document.addEventListener("deviceready", function(){
     var connecting = false;
     setInterval(function () {
         if (dispatcher.state == 'undefined') dispatcher = new WebSocketRails('wss://secrspo.herokuapp.com/websocket');
