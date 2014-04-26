@@ -7,44 +7,14 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
 
-        <script type="text/javascript" src="vendor/jquery-2.1.0.min.js"></script>
-        <script type="text/javascript" src="js/logger.js"></script>
-
-        <script type="text/javascript" src="vendor/websocket-rails.js"></script>
-        <script type="text/javascript" src="js/sockets.js"></script>
-
-        <!-- styles -->
-        <link rel="stylesheet" type="text/css" href="vendor/jquery-mobile/jquery.mobile-1.4.2.min.css">
-
+        <!-- make it pretty -->
+        <link rel="stylesheet" href="vendor/jquery-mobile/jquery.mobile-1.4.2.min.css">
         <link rel="stylesheet" href="vendor/native-droid/font-awesome.min.css">
         <link rel="stylesheet" href="vendor/native-droid/jquerymobile.css" />
         <link rel="stylesheet" href="vendor/native-droid/jquerymobile.nativedroid.css" />
         <link rel="stylesheet" href="vendor/native-droid/jquerymobile.nativedroid.light.css" id='jQMnDTheme'/>
         <link rel="stylesheet" href="vendor/native-droid/jquerymobile.nativedroid.color.green.css" id='jQMnDColor' />
         <link rel="stylesheet" href="css/style.css" />
-
-         <!-- ext. libraries -->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYhZWh2Nguo8KwGcexS31RQqrHU182rp8&amp;sensor=false"></script>
-
-        <script type="text/javascript">
-        $(document).bind("mobileinit", function(){
-          $.mobile.defaultPageTransition = 'none';
-          $.mobile.allowCrossDomainPages = true;
-        });
-        </script>
-        <script type="text/javascript" src="vendor/jquery-mobile/jquery.mobile-1.4.2.min.js"></script>
-        <script type="text/javascript" src="js/misc.js"></script>
-
-
-        <script type="text/javascript" src="phonegap.js"></script>
-
-        <!-- model js -->
-        <script type="text/javascript" src="js/user.js"></script>
-        <script type="text/javascript" src="js/map.js"></script>
-
-        <!-- page/action js -->
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="https://secrspo.herokuapp.com/assets/websocket_rails/main.js"></script>
 
         <title>Secret Spots</title>
     </head>
@@ -101,13 +71,30 @@
             </div>
         </div>
 
+        <!-- vender framework javascript -->
+        <script type="text/javascript" src="vendor/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="js/logger.js"></script>
+
+        <script type="text/javascript" src="js/jquery-mobile-custom.js"></script>j
+        <script type="text/javascript" src="vendor/jquery-mobile/jquery.mobile-1.4.2.min.js"></script>
+
+        <!-- vender js services -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYhZWh2Nguo8KwGcexS31RQqrHU182rp8&amp;sensor=false"></script>
+        <script type="text/javascript" src="vendor/websocket-rails.js"></script>
+
+        <!-- models/objects -->
+        <script type="text/javascript" src="js/user.js"></script>
+        <script type="text/javascript" src="js/map.js"></script>
+
+        <!-- data handling  -->
+        <script type="text/javascript" src="js/sockets.js"></script>
+
+        <!-- application controller/library -->
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
         <script type="text/javascript">
-        loading('show');
-        var message = {awesomeness:4};
-        dispatcher.trigger('awesomeness_approval',message,success,failure);
-         app.initialize();
-         loading('hide');
-         logger.log("test");
+            app.initialize();
         </script>
     </body>
 </html>
