@@ -25,17 +25,16 @@ function initializeDispatcher() {
         logger.warn('Websocket connection closed');
     };
 
-    var connecting = false;
-
     setInterval(function () {
         var status = dispatcher.state;
+        var connecting = false;
         if (status == 'disconnected') {
             logger.error('Websocket status: ' + status);
             logger.warn('Websocket reconnecting...');
             dispatcher.reconnect();
         } if (status == 'connecting') {
             logger.info('Websocket status: ' + status);
-            if(connecting == true) {
+            if(connecting === true) {
                 logger.warn('Websocket connection stale, reconnecting...');
                 dispatcher.reconnect();
                 connecting = false;
