@@ -9,7 +9,7 @@
     <name>Secret Spots</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Share all the cool places you find and see what other adventurers are discovering.
     </description>
 
     <author href="http://selby.io" email="selby.kendrick@gmail.com">
@@ -51,6 +51,7 @@
         <gap:plugin name="Example" />
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
+    <plugin name="Geolocation" value="org.apache.cordova.GeoBroker" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
