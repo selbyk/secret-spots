@@ -60,10 +60,11 @@ var logger = function () {
         intercept(methods[i]);
     };
 
-    Logger.prototype.showLogs = function () {
+    Logger.prototype.hide = function () {
         $('#logs').css('z-index', -1);
     };
-    Logger.prototype.hideLogs = function (msg) {
+
+    Logger.prototype.show = function (msg) {
         $('#logs').css('z-index', 9998);
         $("#menu").panel("close");
     };

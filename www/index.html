@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- vender framework javascript -->
+        <script type="text/javascript" src="vendor/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="js/logger.js"></script>
+
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
 
@@ -58,22 +62,18 @@
                 <li><a href="pages/about.html">About</a></li>
                 <li><a href="pages/about.html">Donate</a></li>
                 <li><a href="pages/info.html">Info</a></li>
-                <li><a href="#" onClick="openLog()">Logs</a></li>
+                <li><a href="#" onClick="logger.show()">Logs</a></li>
             </ul>
         </div><!-- /panel -->
 
         <div id="logs" class="ui-page ui-page-theme-b ui-page-active">
             <div class="header">
-            <a href="#" onClick="closeLog()" class="ui-btn ui-icon-delete">Close</a>
+            <a href="#" onClick="logger.hide()" class="ui-btn ui-icon-delete">Close</a>
             </div>
             <div class="console">
                 <ul class="output ui-listview" data-role="listview" data-divider-theme="b"></ul>
             </div>
         </div>
-
-        <!-- vender framework javascript -->
-        <script type="text/javascript" src="vendor/jquery-2.1.0.min.js"></script>
-        <script type="text/javascript" src="js/logger.js"></script>
 
         <script type="text/javascript" src="js/jquery-mobile-custom.js"></script>j
         <script type="text/javascript" src="vendor/jquery-mobile/jquery.mobile-1.4.2.min.js"></script>

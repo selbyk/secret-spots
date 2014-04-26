@@ -86,7 +86,7 @@ function initializeMap() {
     map.initialize();
 
     $(document).on("pagebeforeshow", ".ui-page", map.hide);
-    $(document).on("pageshow", ".page-map", map.show;
+    $(document).on("pageshow", ".page-map", map.show);
 
     navigator.geolocation.watchPosition(function (position) {
         user.position = position;
