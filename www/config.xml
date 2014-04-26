@@ -80,6 +80,7 @@
     <!--
         Access to external domains.
     -->
+    <access origin="*"/>
     <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
     <access origin="https://secrspo.herokuapp.com*"/>
     <access origin="wss://secrspo.herokuapp.com*"/>

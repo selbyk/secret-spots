@@ -80,6 +80,6 @@ function Map(div) {
 
 var map = new Map('#map-container');
 
-document.addEventListener("deviceready", function(){
+$(function(){
     map.initialize();
 });
