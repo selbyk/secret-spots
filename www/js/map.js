@@ -18,10 +18,10 @@ var map = {
         draggable: false
     },
     init: function () {
-        if (user.position !== null) this.options.center = new google.maps.LatLng(user.position.coords.latitude, user.position.coords.longitude);
+        if (user.position !== null)
+            this.options.center = new google.maps.LatLng(user.position.coords.latitude, user.position.coords.longitude);
         this._object = new google.maps.Map(document.getElementById("map"), this.options);
         this.updateUserLocation();
-        return this._object;
     },
     updateUserLocation: function () {
         if (user.position !== null) {
