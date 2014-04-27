@@ -20,12 +20,14 @@
         Enable individual API permissions here.
         The "device" permission is required for the 'deviceready' event.
     -->
-    <feature name="Device">
-        <param name="android-package" value="org.apache.cordova.Device" />
-    </feature>
+    <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.GeoBroker" />
     </feature>
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    
 
     <!-- Customize your app and platform with the preference element. -->
     <!-- <preference name="phonegap-version"      value="3.4.0" /> -->      <!-- all: current version of PhoneGap -->
@@ -45,9 +47,9 @@
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
     <!-- Plugins -->
-    <gap:plugin name="org.apache.cordova.device" /> <!-- Device plugin -->
     <gap:plugin name="org.apache.cordova.core.geolocation" /> <!-- Geolocation plugin -->
     <gap:plugin name="com.ququplay.websocket.websocket" version="0.1.0" /> <!-- Websockets -->
+    <gap:plugin name="org.apache.cordova.dialogs"/>
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />

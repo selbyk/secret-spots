@@ -1,6 +1,6 @@
 var headerHeight = $(".ui-header").outerHeight();
 var footerHeight = $(".ui-footer").outerHeight();
-var contentHeight = $.mobile.getScreenHeight() - headerHeight - footerHeight;
+var contentHeight = 500 - headerHeight - footerHeight;
 
 $(function () {
   headerHeight = $(".ui-header").outerHeight();

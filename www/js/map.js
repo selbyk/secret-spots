@@ -82,11 +82,20 @@ function Map(div) {
 
 var map = new Map('#map-container');
 
+function hideMap () {
+    map.hide();
+}
+
+function showMap () {
+    map.show();
+}
+
+
 function initializeMap() {
     map.initialize();
 
-    $(document).on("pagebeforeshow", ".ui-page", map.hide);
-    $(document).on("pageshow", ".page-map", map.show);
+    $(document).on("pagebeforeshow", ".ui-page", hideMap);
+    $(document).on("pageshow", ".page-map", showMap);
 
     navigator.geolocation.watchPosition(function (position) {
         user.position = position;
