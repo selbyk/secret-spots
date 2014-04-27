@@ -9,6 +9,10 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        $( document ).on( "pageinit", ".ui-page", function( event ) {
+          fixStyling();
+          setStyling();
+        });
     },
     // deviceready Event Handler
     //
